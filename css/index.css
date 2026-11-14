@@ -144,7 +144,7 @@ img {
         object-fit: contain;
         height: auto;
 
-        animation: jostle 1.5s steps(2) infinite;
+        animation: jostle 1.5s steps(1, end) infinite;
         cursor: url("../images/smiley-cursor.png"), auto;
     }
 }
@@ -228,7 +228,8 @@ img {
 #sticky-note {
     bottom: -20px;
     left: 100%;
-    animation: jostle 1s steps(2) infinite;
+    animation: jostle 1s steps(1, end) infinite;
+    will-change: transform;
 }
 
 #skrib-jump {
@@ -242,7 +243,8 @@ img {
     top: 10px;
     right: 100%;
 
-    animation: jostle 2s steps(2) infinite;
+    animation: jostle 2s steps(1, end) infinite;
+    will-change: transform;
 }
 
 #spinning-rat {
@@ -395,13 +397,9 @@ img {
 }
 
 @keyframes jostle {
-    from {
-        transform: rotate(-4deg);
-    }
-
-    to {
-        transform: rotate(8deg);
-    }
+    0%   { transform: rotate(-4deg); }
+    50%  { transform: rotate(4deg); }
+    100% { transform: rotate(-4deg); }
 }
 
 @keyframes spin {
@@ -414,19 +412,24 @@ img {
     }
 }
 
-.scroll-animated {
-    opacity: 0;
-    translate: 0 100px;
-    rotate: 4deg;
-    transition: opacity 0.8s ease,
-                translate 0.8s cubic-bezier(0.075, 0.82, 0.165, 1),
-                rotate 0.8s cubic-bezier(0.075, 0.82, 0.165, 1)
+@keyframes reveal {
+    from {
+        opacity: 0;
+        translate: 0 100px;
+        rotate: 4deg;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+        rotate: 0deg;
+    }
 }
 
-.scroll-animated.visible {
-    opacity: 1;
-    translate: 0 0;
-    rotate: 0deg;
+.scroll-animated {
+    animation: reveal ease-out both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 20%;
 }
 
 /* media queries -------------------------------- */
@@ -446,5 +449,6 @@ img {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+        animation-timeline: none;
     }
 }
