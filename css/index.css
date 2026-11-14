@@ -192,18 +192,17 @@ img {
 }
 
 .boxed::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  width: 20%;
-  height: 2.5em;
-  background: rgba(170, 170, 170, 0.4);
-  transform: translateX(-50%) rotate(-3deg);
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 20%;
+    height: 2.5em;
+    background: rgba(170, 170, 170, 0.4);
+    transform: translateX(-50%) rotate(-3deg);
 }
 
 .lined {
-    /* Image path */
     background-image: url("../images/lined-paper.jpg");
     background-repeat: repeat-y;
     background-size: 100% auto;
@@ -213,8 +212,6 @@ img {
 .boxed, .lined {
     margin: 2rem auto;
     padding: 2rem 1rem;
-
-    /* extend line on h1 */
 }
 
 /* side decor ----------------------------------- */
@@ -283,6 +280,7 @@ img {
 #projects {
     text-align: center;
     width: 95%;
+    box-shadow: 0 5px 0 var(--tertiary-color);
 }
 
 #project-list {
@@ -327,39 +325,27 @@ img {
 }
 
 .project-card:nth-child(odd) {
-    transform: rotate(2deg);
+    rotate: 2deg;
 }
 
 .project-card:nth-child(even) {
-    transform: rotate(-1deg);
+    rotate: -1deg;
 }
 
 .project-card:nth-child(3n) {
-    transform: rotate(1deg);
+    rotate: 1deg;
 }
 
 
 .project-card::before {
     content: "";
     position: absolute;
-    left: 0%;
-    width: 15%;
+    top: 0px;
+    left: 50%;
+    width: 20%;
     height: 2em;
     background: rgba(170, 170, 170, 0.4);
-    
-    transform: translateX(-50%) translateY(-100%) rotate(-45deg);
-}
-
-.project-card::after {
-    content: "";
-    position: absolute;
-    right: 0%;
-    bottom: 20px;
-    width: 15%;
-    height: 2em;
-    background: rgba(170, 170, 170, 0.4);
-    
-    transform: translateX(50%) translateY(100%) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-3deg);
 }
 
 #socials {
