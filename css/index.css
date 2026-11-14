@@ -29,7 +29,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-color: var(--tertiary-color) var(--primary-color);
-    cursor: url("/images/cursor.png"), auto;
+    cursor: url("images/cursor.png"), auto;
     image-rendering: pixelated;
     font-size: clamp(16px, 0.9rem + 0.4vw, 20px);
 }
@@ -112,7 +112,7 @@ img {
 
 #top {
     background-color: var(--primary-color);
-    background-image: url("/images/happy_overlay.png");
+    background-image: url("images/happy_overlay.png");
     background-size: contain;
     
     display: flex;
@@ -145,7 +145,7 @@ img {
         height: auto;
 
         animation: jostle 1.5s steps(2) infinite;
-        cursor: url("/images/smiley-cursor.png"), auto;
+        cursor: url("images/smiley-cursor.png"), auto;
     }
 }
 
@@ -166,14 +166,14 @@ img {
         width: 20vw;
         max-width: 150px;
         height: auto;
-        cursor: url("/images/smiley-cursor.png"), auto;
+        cursor: url("images/smiley-cursor.png"), auto;
     }
 }
 
 .boxed {
     position: relative;
     border: 24px solid transparent;
-    border-image-source: url(/images/squiggle_square.gif);
+    border-image-source: url(images/squiggle_square.gif);
     border-image-slice: 24 fill;
     border-image-repeat: stretch;
 
@@ -204,7 +204,7 @@ img {
 
 .lined {
     /* Image path */
-    background-image: url("/images/lined-paper.jpg");
+    background-image: url("images/lined-paper.jpg");
     background-repeat: repeat-y;
     background-size: 100% auto;
     width: 80%;
@@ -223,7 +223,7 @@ img {
     z-index: 2;
     height: 50%;
     width: auto;
-    cursor: url("/images/eye-cursor.png"), auto;
+    cursor: url("images/eye-cursor.png"), auto;
     pointer-events: visible;
     display: none;
 }
